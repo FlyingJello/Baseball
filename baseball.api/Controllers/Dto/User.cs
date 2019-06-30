@@ -9,5 +9,10 @@
         {
             return new Models.User {Username = Username};
         }
+
+        public static User ToDto(Models.User user)
+        {
+            return new User {Username = user.Username};
+        }
     }
 }

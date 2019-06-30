@@ -1,4 +1,5 @@
-﻿using Baseball.Controllers.Dto;
+﻿using System.Linq;
+using Baseball.Controllers.Dto;
 using Baseball.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +37,7 @@ namespace Baseball.Controllers
         public IActionResult GetUsers()
         {
             var users = _userService.GetAllUsers();
-            return Ok(users);
+            return Ok(users.Select(Dto.User.ToDto));
         }
     }
 }
