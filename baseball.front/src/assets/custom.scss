@@ -1,0 +1,115 @@
+// Define your variable overrides here
+$enable-shadows: true;
+$enable-gradients: true;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 456px,
+  md: 789px,
+  lg: 999px,
+  xl: 1234px
+);
+$body-bg: #f3f3f4;
+$body-color: #5c5f61;
+$font-size-base: 0.9rem;
+
+$primary: #12806a;
+$dark: #1b1b23;
+
+$h1-font-size: 30px;
+
+// Include Bootstrap and BootstrapVue SCSS files
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+body, html, #app, .login-background .container {
+    height: 100%;
+}
+
+[role="main"] {
+    padding-top: 54px;
+}
+
+@media (min-width: 574px) and (max-width: 1199px) {
+	.sidebar {
+		width: 60px !important;
+	}
+	
+	[role="main"] {
+		width: calc(100% - 60px);
+	}
+} 
+
+.btn {
+    border: 0;
+	vertical-align: initial;
+	padding: 9px 15px 9px 15px;
+}
+
+.breadcrumb {
+	background-color: inherit;
+	margin: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.breadcrumb a {
+	color: inherit;
+}
+
+/* BEGIN MANAGE MESSAGE MODAL */
+#bv-modal-message .modal-footer {
+    border: none;
+}
+/* END MANAGE MESSAGE MODAL */
+
+/* BEGIN MENU */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 54px 0 0;
+}
+
+.sidebar-sticky {
+    top: 0;
+    height: calc(100vh - 54px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-sticky > li > a {
+    color: white;
+}
+/* END MENU */
+
+/* BEGIN LOGIN */
+@media (min-width: 768px) { 
+	.login-wrap {
+        width : 70%;
+    }
+
+    .login-background {
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/Baseball-Login.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+}
+
+@media (min-width: 992px) {
+	.login-wrap {
+		width : 40%;
+    }
+}
+
+@media (min-width: 1200px) {
+	.login-wrap {
+		width : 35%;
+    }
+}
+/* END LOGIN */
