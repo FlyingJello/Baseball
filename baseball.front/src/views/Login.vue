@@ -7,6 +7,7 @@
             <h1 class="font-weight-light text-center pt-2 mb-0">Connexion</h1>
             <hr />
             <b-form @submit="userAuthentication">
+              <b-form-invalid-feedback class="mb-2" :state="authenticationState">Nom d'utilisateur ou mot de passe invalide.</b-form-invalid-feedback>
               <b-form-group id="user-group" label="Nom d'utilisateur" label-for="username">
                 <b-form-input
                   id="username"
@@ -17,7 +18,7 @@
                 />
                 <b-form-invalid-feedback :state="usernameState">Le nom d'utilisateur est requis.</b-form-invalid-feedback>
               </b-form-group>
-              <b-form-group id="password-group" label="Mot de passe" label-for="password">
+              <b-form-group id="password-group" class="mb-0" label="Mot de passe" label-for="password">
                 <b-form-input
                   id="password"
                   type="password"
@@ -28,7 +29,6 @@
                 <b-form-invalid-feedback :state="passwordState">Le mot de passe est requis.</b-form-invalid-feedback>
               </b-form-group>
               <ForgotPassword />
-              <b-form-invalid-feedback :state="authenticationState">Nom d'utilisateur ou mot de passe invalide.</b-form-invalid-feedback>
               <div class="text-right mt-3">
                 <b-button type="submit" squared variant="primary" :disabled="loggingIn">
                   <b-spinner v-show="loggingIn" small type="grow" />
